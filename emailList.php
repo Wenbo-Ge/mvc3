@@ -5,8 +5,8 @@ class emailList {
 	// 	echo 'list object is created';
 	// }
 
-	public function addMethod($id){
-		echo "Using Add Method" . $id;
+	public function addMethod(){
+		echo "Using Add Method";
 	}
 
 	public function deleteMethod($id){
@@ -21,7 +21,7 @@ class emailList {
 	
 
 
-echo "list.php is used<br>";
+echo "emailList.php is used<br>";
 
 
 ?>

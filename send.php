@@ -14,7 +14,7 @@ class send{
 	}
 }
 
-echo "<br>send.php is used";
+echo "send.php is used<br>";
 
 
 ?>
