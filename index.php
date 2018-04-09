@@ -1,4 +1,11 @@
 <?php
+//非常适合做rest
+
+require_once('vendor/autoload.php');
+require_once('db.php');
+
+header('Access-Control-Allow-Origin:*');
+header('Content-Type:application/json; charset=UTF-8');
 
 $param=$_GET['param'];
 
@@ -19,11 +26,13 @@ $param=$_GET['param'];
 //构思：做项目的时候可以直接在url里调用不同文件里的不同方法，这样可以在link上设置不同的url来实现功能，页面的跳转。
 //比如要查找联系人，点击list按钮，会跳转到email/emailList的界面，浏览所有的联系人，apache会根据url自动调用emailList.php里的方法来显示所有联系人
 
+// 前端+后端
+
 $param_array=explode('/', $param);
 
-echo '<pre>';
-var_dump($param_array);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($param_array);
+// echo '</pre>';
 
 
 //Use url变量array来访问文件
@@ -40,13 +49,13 @@ $handle_obj=new $param_array[0]();
 if (array_key_exists(1, $param_array)) {
 	$method=$param_array[1].'Method';
 }else{
-	$method='defaultMethod';
+	$method='indexMethod';
 }
 
 if (array_key_exists(2, $param_array)) {
-	$handle_obj->$method($param_array[2]);
+	echo $handle_obj->$method($param_array[2]);
 }else{
-	$handle_obj->$method();
+	echo $handle_obj->$method();
 }
 
 
