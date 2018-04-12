@@ -18,7 +18,7 @@ class templates {
 
 	
 
-	public function defaultMethod(){
+	public function indexMethod(){
 		return "template index action is working";
 	}
 
