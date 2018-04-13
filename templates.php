@@ -86,6 +86,20 @@ class templates {
 		}
 		
 	}
+
+	public function getByIdMethod($id){
+		$conn=new DBConnection();
+		$results=$conn->getTemplateById($id);
+
+		if ($results) {
+			return json_encode($results);
+		} else {
+			return json_encode(array('code'=>400,
+				'message'=>'No template exits'));
+		}
+		
+	}
+
 }
 
 
